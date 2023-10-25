@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { Slider } from '@mui/material';
 
 export const SectionStyled = styled.section`
-	width: 100%;
-	min-width: 502px;
+	/* width: 100%;
+	min-width: 502px; */
 	height: 93px;
 	margin-bottom: 50px;
 	padding-bottom: 10px;
@@ -12,12 +12,13 @@ export const SectionStyled = styled.section`
 	background-color: #ffffff;
 `;
 
-export const AdjustersContainer = styled.form`
+export const AdjustersContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 20px;
-	width: 500px;
+	width: 100%;
+	min-width: 502px;
 	padding-inline: 10px;
 	color: #1976d2;
 	font-size: 14px;
