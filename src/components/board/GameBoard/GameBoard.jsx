@@ -20,22 +20,22 @@ const GameBoard = () => {
 
 	console.log('startCell: ', startCell);
 
-	const currentPosition = {
+	const currentCell = {
 		x: startCell.x,
 		y: startCell.y,
 	};
 
 	for (let i = 1; i <= movements; i++) {
-		console.log('currentPosition: ', currentPosition);
+		console.log('currentCell: ', currentCell);
 
 		let availableDirections = [];
 
 		for (const direction in directions) {
 			if (
-				currentPosition.x + directions[direction].x >= 0 &&
-				currentPosition.x + directions[direction].x < boardSize &&
-				currentPosition.y + directions[direction].y >= 0 &&
-				currentPosition.y + directions[direction].y < boardSize
+				currentCell.x + directions[direction].x >= 0 &&
+				currentCell.x + directions[direction].x < boardSize &&
+				currentCell.y + directions[direction].y >= 0 &&
+				currentCell.y + directions[direction].y < boardSize
 			) {
 				availableDirections.push(direction);
 			}
@@ -45,11 +45,13 @@ const GameBoard = () => {
 		const move = availableDirections[random(availableDirections.length)];
 		console.log(move);
 
-		currentPosition.x += directions[move].x;
-		currentPosition.y += directions[move].y;
+		currentCell.x += directions[move].x;
+		currentCell.y += directions[move].y;
 	}
 
-	console.log('currentPosition: ', currentPosition);
+	const finalCell = { ...currentCell };
+
+	console.log('finalCell: ', finalCell);
 };
 
 export default GameBoard;

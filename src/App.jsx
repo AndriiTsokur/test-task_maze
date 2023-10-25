@@ -1,5 +1,5 @@
 import Preferences from 'components/Preferences';
-import GameBoard from 'components/GameBoard';
+import GameBoard from 'components/board/GameBoard';
 import { AppWrapper } from './App.styled';
 
 const App = () => {
