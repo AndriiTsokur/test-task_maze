@@ -5,7 +5,7 @@ export const AppWrapper = styled.main`
 	justify-content: center;
 	align-content: center;
 	/* width: 100%; */
-	height: 100vh;
+	/* height: 100vh; */
 	padding: 20px;
 	background-color: #d3d3d3;
 `;
