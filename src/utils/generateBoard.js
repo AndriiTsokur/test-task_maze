@@ -12,7 +12,7 @@ const generateBoard = (boardSize) => {
 		}
 	}
 
-	return boardArr;
+	return boardArr.reverse();
 };
 
 export default generateBoard;

@@ -52,11 +52,12 @@ const Preferences = () => {
 		<SectionStyled>
 			<SectionTitle>Preferences</SectionTitle>
 
+			<LabelStyled>
+				<AccentStyled>Adjust board size </AccentStyled>
+				{`(movements: ${newMovements})`}
+			</LabelStyled>
+
 			<FormStyled onSubmit={handleSubmit}>
-				<LabelStyled>
-					<AccentStyled>Adjust board size </AccentStyled>
-					{`(movements: ${newMovements})`}
-				</LabelStyled>
 				<SliderWrapperStyled>
 					<Grid3x3Rounded color="primary" />
 					<SliderStyled

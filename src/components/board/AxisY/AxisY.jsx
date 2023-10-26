@@ -1,7 +1,7 @@
 import { ContainerStyled } from './AxisY.styled';
 
-const AxisY = ({ nodePoint }) => {
-	return <ContainerStyled>{nodePoint}</ContainerStyled>;
+const AxisY = ({ children }) => {
+	return <ContainerStyled>{children}</ContainerStyled>;
 };
 
 export default AxisY;

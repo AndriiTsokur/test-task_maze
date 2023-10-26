@@ -5,21 +5,24 @@ export const SectionStyled = styled.section`
 	/* width: 100%;
 	min-width: 502px; */
 	/* height: 120px; */
-	margin-bottom: 50px;
+	min-width: 530px;
+	margin-inline: auto;
+	margin-bottom: 20px;
 	padding-bottom: 10px;
 	border: 1px solid #808080;
 	border-radius: 10px;
 	background-color: #ffffff;
+	box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 `;
 
 export const FormStyled = styled.form`
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-direction: column; */
 	justify-content: space-between;
 	align-items: center;
 	column-gap: 20px;
-	width: 100%;
-	min-width: 502px;
+	/* width: 100%; */
+	min-width: 528px;
 	padding-inline: 10px;
 	color: #1976d2;
 	font-size: 14px;
@@ -27,7 +30,7 @@ export const FormStyled = styled.form`
 `;
 
 export const LabelStyled = styled.p`
-	width: 100%;
+	/* width: 100%; */
 	padding-top: 10px;
 	padding-left: 40px;
 `;

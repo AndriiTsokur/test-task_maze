@@ -1,20 +1,23 @@
 import styled from '@emotion/styled';
 
+export const ContainerStyled = styled.section`
+	min-width: 530px;
+	margin-inline: auto;
+	padding: 3px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+	background-color: #aeceee;
+	box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+`;
+
 export const BoardWrapperStyled = styled.ul`
 	display: flex;
 	flex-direction: column;
+	gap: 3px;
+	align-items: center;
 `;
-
-export const RawContainer = styled.li``;
 
 export const RawWrapperStyled = styled.ul`
 	display: flex;
-`;
-
-export const CellStyled = styled.li`
-	width: 100px;
-	height: 100px;
-	border: 1px solid black;
-	border-radius: 5px;
-	background-color: #ffffff;
+	gap: 3px;
 `;
