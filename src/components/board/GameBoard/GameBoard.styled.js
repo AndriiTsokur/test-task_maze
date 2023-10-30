@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ContainerStyled = styled.section`
 	min-width: 530px;
 	margin-inline: auto;
-	padding: 3px;
+	padding: 10px;
 	border: 1px solid #808080;
 	border-radius: 10px;
 	background-color: #aeceee;
@@ -17,7 +17,7 @@ export const BoardWrapperStyled = styled.ul`
 	align-items: center;
 `;
 
-export const RawWrapperStyled = styled.ul`
+export const RowWrapperStyled = styled.ul`
 	display: flex;
 	gap: 3px;
 `;

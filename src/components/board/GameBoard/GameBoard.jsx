@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import { selectBoardSize, selectStartCell } from 'src/redux/board/boardSlice';
 import { generateBoard, randomizer } from 'src/utils';
 
-import { AxisY, BoardCell } from 'components/board';
+import { AxisX, AxisY, BoardCell } from 'components/board';
 
 import {
 	ContainerStyled,
 	BoardWrapperStyled,
-	RawWrapperStyled,
+	RowWrapperStyled,
 } from './GameBoard.styled';
 
 const GameBoard = () => {
@@ -16,28 +16,45 @@ const GameBoard = () => {
 	const boardSize = useSelector(selectBoardSize);
 	const boardArr = generateBoard(boardSize);
 
-	let lastRowNumber = boardSize;
+	const AxisYNumeration = [];
+
+	for (let i = boardSize - 1; i >= 0; i--) {
+		AxisYNumeration.push(i);
+	}
 
 	return (
 		<ContainerStyled>
 			<BoardWrapperStyled>
-				{boardArr.map((raw) => (
+				<li>
+					<AxisX cellsNumber={boardSize} />
+				</li>
+
+				{boardArr.map((row, idx) => (
 					<li key={randomizer(10000)}>
-						<RawWrapperStyled key={randomizer(10000)}>
-							<AxisY key={randomizer(10000)}>{lastRowNumber--}</AxisY>
-							{raw.map(({ x, y }) => (
+						<RowWrapperStyled key={randomizer(10000)}>
+							<AxisY key={randomizer(10000)}>{AxisYNumeration[idx]}</AxisY>
+
+							{row.map(({ x, y }) => (
 								<li key={randomizer(10000)}>
 									{/* <BoardCell coordinates={`{"cell":{"x":${x}, "y":${y}}}`}> */}
 									<BoardCell coordX={x} coordY={y}>
-										{(startCell?.x === x && startCell?.y === y && 'START') ||
+										{(startCell?.x === x &&
+											startCell?.y === y &&
+											'START POINT') ||
 											`X: ${x}, Y: ${y}`}
 										{/* {`X: ${x}, Y: ${y}`} */}
 									</BoardCell>
 								</li>
 							))}
-						</RawWrapperStyled>
+
+							<AxisY key={randomizer(10000)}>{AxisYNumeration[idx]}</AxisY>
+						</RowWrapperStyled>
 					</li>
 				))}
+
+				<li>
+					<AxisX cellsNumber={boardSize} />
+				</li>
 			</BoardWrapperStyled>
 		</ContainerStyled>
 	);

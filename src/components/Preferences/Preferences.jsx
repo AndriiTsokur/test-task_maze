@@ -87,7 +87,7 @@ const Preferences = () => {
 						variant="contained"
 						disabled={isButtonActive}
 					>
-						START
+						START GAME
 					</Button>
 				</ButtonsWrapperStyled>
 			</FormStyled>
