@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-
 import { selectBoardSize, selectStartCell } from 'src/redux/boardSlice';
 
 import { generateBoard, randomizer } from 'src/utils';

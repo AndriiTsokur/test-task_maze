@@ -1,5 +1,6 @@
-import Preferences from 'components/Preferences';
-import GameBoard from 'components/board/GameBoard';
+import Preferences from 'components/PreferencesSection';
+import { GameBoard } from 'components/board';
+import { Movements } from 'components/movements';
 import { AppWrapper } from './App.styled';
 
 const App = () => {
@@ -7,6 +8,7 @@ const App = () => {
 		<AppWrapper>
 			<Preferences />
 			<GameBoard />
+			<Movements />
 		</AppWrapper>
 	);
 };
