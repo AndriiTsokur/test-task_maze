@@ -285,7 +285,7 @@ Error generating stack: `+i.message+`
 	gap: 3px;
 	justify-content: center;
 	align-items: center;
-`,pC=()=>{const e=un(Wc),t=un(iS);return b.useEffect(()=>{if(e.x!==null&&t.length!==0){const n=document.querySelectorAll(".movement");let r=null;for(let o=0;o<=n.length;o++)r=setTimeout(()=>{n[o].style.opacity="1"},1500*(o+1));clearTimeout(r)}},[e.x,t.length]),R.jsxs(fC,{children:[R.jsx(I0,{children:"Movements"}),R.jsx(dC,{children:t.map(n=>R.jsx("li",{children:R.jsx(cC,{children:n})},Kt(1e4)))})]})},mC=ue.main`
+`,pC=()=>{const e=un(Wc),t=un(iS);return b.useEffect(()=>{if(e.x!==null&&t.length!==0){const n=document.querySelectorAll(".movement");let r=null;for(let o=0;o<=n.length;o++)r=setTimeout(()=>{n[o].style.opacity="1"},1e3*(o+1));clearTimeout(r)}},[e.x,t.length]),R.jsxs(fC,{children:[R.jsx(I0,{children:"Movements"}),R.jsx(dC,{children:t.map(n=>R.jsx("li",{children:R.jsx(cC,{children:n})},Kt(1e4)))})]})},mC=ue.main`
 	margin-inline: auto;
 	padding: 20px;
 	background-color: #d3d3d3;
