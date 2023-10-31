@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 
-import { selectBoardSize, selectStartCell } from 'src/redux/board/boardSlice';
+import { selectBoardSize, selectStartCell } from 'src/redux/boardSlice';
+
 import { generateBoard, randomizer } from 'src/utils';
 
 import { AxisX, AxisY, BoardCell } from 'components/board';
@@ -12,8 +13,8 @@ import {
 } from './GameBoard.styled';
 
 const GameBoard = () => {
-	const startCell = useSelector(selectStartCell);
 	const boardSize = useSelector(selectBoardSize);
+	const startCell = useSelector(selectStartCell);
 	const boardArr = generateBoard(boardSize);
 
 	const AxisYNumeration = [];
@@ -36,13 +37,8 @@ const GameBoard = () => {
 
 							{row.map(({ x, y }) => (
 								<li key={randomizer(10000)}>
-									{/* <BoardCell coordinates={`{"cell":{"x":${x}, "y":${y}}}`}> */}
 									<BoardCell coordX={x} coordY={y}>
-										{(startCell?.x === x &&
-											startCell?.y === y &&
-											'START POINT') ||
-											`X: ${x}, Y: ${y}`}
-										{/* {`X: ${x}, Y: ${y}`} */}
+										{startCell?.x === x && startCell?.y === y && 'START POINT'}
 									</BoardCell>
 								</li>
 							))}

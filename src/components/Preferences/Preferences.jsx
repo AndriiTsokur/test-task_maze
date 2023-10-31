@@ -3,14 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 import { Grid3x3Rounded, Grid4x4Rounded } from '@mui/icons-material';
 
-import { calcMovements } from 'src/utils';
+import { calcMovements, generateMoveSequence } from 'src/utils';
 
 import {
 	selectBoardSize,
 	selectMovements,
+	selectStartCell,
+	selectFinalCell,
 	setBoardSize,
 	setStartCell,
-} from 'src/redux/board/boardSlice';
+	setFinalCell,
+	setMoveSequence,
+} from 'src/redux/boardSlice';
 
 import SectionTitle from 'components/SectionTitle';
 
@@ -28,6 +32,8 @@ const Preferences = () => {
 	const dispatch = useDispatch();
 	const boardSize = useSelector(selectBoardSize);
 	const movements = useSelector(selectMovements);
+	const startCell = useSelector(selectStartCell);
+	const finalCell = useSelector(selectFinalCell);
 
 	const [isButtonActive, setIsButtonActive] = useState(false);
 	const [newMovements, setNewMovements] = useState(movements);
@@ -46,7 +52,22 @@ const Preferences = () => {
 		setIsButtonActive(false);
 	};
 
-	const handleStart = () => dispatch(setStartCell());
+	const handleStart = () => {
+		dispatch(setStartCell());
+	};
+
+	if (startCell.x !== null && startCell.y !== null) {
+		const { moveSequence, finalCellCoordinates } = generateMoveSequence({
+			startCell,
+			movements,
+			boardSize,
+		});
+
+		if (finalCell.x === null && finalCell.y === null) {
+			dispatch(setFinalCell(finalCellCoordinates));
+			dispatch(setMoveSequence(moveSequence));
+		}
+	}
 
 	return (
 		<SectionStyled>
