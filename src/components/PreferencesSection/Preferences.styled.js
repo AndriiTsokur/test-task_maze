@@ -2,9 +2,6 @@ import styled from '@emotion/styled';
 import { Slider } from '@mui/material';
 
 export const SectionStyled = styled.section`
-	/* width: 100%;
-	min-width: 502px; */
-	/* height: 120px; */
 	min-width: 530px;
 	margin-inline: auto;
 	margin-bottom: 20px;
@@ -17,11 +14,9 @@ export const SectionStyled = styled.section`
 
 export const FormStyled = styled.form`
 	display: flex;
-	/* flex-direction: column; */
 	justify-content: space-between;
 	align-items: center;
 	column-gap: 20px;
-	/* width: 100%; */
 	min-width: 528px;
 	padding-inline: 10px;
 	color: #1976d2;
@@ -30,7 +25,6 @@ export const FormStyled = styled.form`
 `;
 
 export const LabelStyled = styled.p`
-	/* width: 100%; */
 	padding-top: 10px;
 	padding-left: 40px;
 `;

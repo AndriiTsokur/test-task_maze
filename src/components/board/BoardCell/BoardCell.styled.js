@@ -19,15 +19,4 @@ export const CellStyled = styled.button`
 		transform: scale(0.99);
 		box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.3);
 	}
-
-	/* display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100px;
-	height: 100px;
-	padding: 10px;
-	border: none;
-	border-radius: 5px;
-	background-color: #c1ead4;
-	cursor: pointer; */
 `;

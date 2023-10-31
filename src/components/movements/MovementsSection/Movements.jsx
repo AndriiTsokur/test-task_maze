@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { selectMoveSequence } from 'src/redux/boardSlice';
+import { selectMoveSequence, selectStartCell } from 'src/redux/boardSlice';
 
 import { randomizer } from 'src/utils';
 
@@ -10,10 +10,11 @@ import { MovementCell } from 'components/movements';
 import { SectionStyled, MovementsWrapperStyled } from './Movements.styled';
 
 const Movements = () => {
+	const startCell = useSelector(selectStartCell);
 	const moveSequence = useSelector(selectMoveSequence);
 
 	useEffect(() => {
-		if (moveSequence.length !== 0) {
+		if (startCell.x !== null && moveSequence.length !== 0) {
 			const movements = document.querySelectorAll('.movement');
 			let timer = null;
 
@@ -28,7 +29,7 @@ const Movements = () => {
 
 			clearTimeout(timer);
 		}
-	}, [moveSequence.length]);
+	}, [startCell.x, moveSequence.length]);
 
 	return (
 		<SectionStyled>

@@ -1,9 +1,6 @@
 import styled from '@emotion/styled';
 
 export const SectionStyled = styled.section`
-	/* width: 100%;
-	min-width: 502px; */
-	/* height: 120px; */
 	min-width: 530px;
 	min-height: 126px;
 	margin-inline: auto;

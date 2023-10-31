@@ -2,15 +2,13 @@ import { randomizer } from 'src/utils';
 
 const generateMoveSequence = ({ startCell, movements, boardSize }) => {
 	const directions = {
-		up: { x: 0, y: 1 }, // UP
-		right: { x: 1, y: 0 }, // RIGHT
-		down: { x: 0, y: -1 }, // DOWN
-		left: { x: -1, y: 0 }, // LEFT
+		up: { x: 0, y: 1 },
+		right: { x: 1, y: 0 },
+		down: { x: 0, y: -1 },
+		left: { x: -1, y: 0 },
 	};
 
 	const moveSequence = [];
-
-	// console.log('startCell: ', startCell);
 
 	const currentCell = {
 		x: startCell.x,
@@ -18,8 +16,6 @@ const generateMoveSequence = ({ startCell, movements, boardSize }) => {
 	};
 
 	for (let i = 1; i <= movements; i++) {
-		// console.log('currentCell: ', currentCell);
-
 		let availableDirections = [];
 
 		for (const direction in directions) {
@@ -32,20 +28,15 @@ const generateMoveSequence = ({ startCell, movements, boardSize }) => {
 				availableDirections.push(direction);
 			}
 		}
-		// console.log(availableDirections);
 
 		const move = availableDirections[randomizer(availableDirections.length)];
 		moveSequence.push(move);
-		// console.log(move);
 
 		currentCell.x += directions[move].x;
 		currentCell.y += directions[move].y;
 	}
 
 	const finalCellCoordinates = { ...currentCell };
-
-	// console.log('finish: ', finalCellCoordinates);
-	// console.log(moveSequence);
 
 	return { finalCellCoordinates, moveSequence };
 };
